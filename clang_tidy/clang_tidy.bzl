@@ -114,7 +114,7 @@ clang_tidy_aspect = aspect(
     fragments = ["cpp"],
     attrs = {
         "_cc_toolchain": attr.label(default = Label("@bazel_tools//tools/cpp:current_cc_toolchain")),
-        "_clang_tidy": attr.label(default = Label("//clang_tidy:clang_tidy")),
+        "_clang_tidy": attr.label(default = Label("@clang_tidy//:clang-tidy"), allow_single_file = True),
     },
     toolchains = ["@bazel_tools//tools/cpp:toolchain_type"],
 )
